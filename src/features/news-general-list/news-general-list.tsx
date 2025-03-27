@@ -4,7 +4,12 @@ import { useGetTopNewsQuery } from "../api/api-slice";
 const NewsGeneralList = () => {
 	const { data, isLoading } = useGetTopNewsQuery();
 	if (isLoading) {
-		return <ActivityIndicator size="large" />;
+		return (
+			<ActivityIndicator
+				className="h-screen flex justify-center items-center"
+				size="large"
+			/>
+		);
 	}
 	return (
 		<View>
@@ -12,7 +17,7 @@ const NewsGeneralList = () => {
 				data={data.articles}
 				renderItem={({ item }) => (
 					<View>
-						<Text>{item.title}</Text>
+						<Text className="">{item.title}</Text>
 					</View>
 				)}
 				keyExtractor={(item) => item.url}
