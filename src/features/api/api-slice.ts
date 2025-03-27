@@ -9,10 +9,10 @@ export const apiSlice = createApi({
 		},
 	}),
 	endpoints: (builder) => ({
-		getNews: builder.query({
-			query: () => "/everything?q=bitcoin",
+		getTopNews: builder.query({
+			query: () => "/top-headlines?category=general",
 		}),
 	}),
 });
 
-export const { useGetNewsQuery } = apiSlice;
+export const { useGetTopNewsQuery } = apiSlice;

@@ -1,12 +1,10 @@
-import { Text, View } from "react-native";
-import { useGetNewsQuery } from "../features/api/api-slice";
+import { View } from "react-native";
+import NewsGeneralList from "../features/news-general-list/news-general-list";
 
 export default function HomeScreen() {
-	const { data } = useGetNewsQuery();
-	console.log(data);
 	return (
 		<View>
-			<Text>Home</Text>
+			<NewsGeneralList />
 		</View>
 	);
 }
