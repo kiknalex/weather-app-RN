@@ -12,7 +12,6 @@ const NewsGeneralList = () => {
 			/>
 		);
 	}
-	console.log(data);
 	return (
 		<View>
 			<FlatList
