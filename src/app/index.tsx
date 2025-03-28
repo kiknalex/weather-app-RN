@@ -4,7 +4,7 @@ import { Stack } from "expo-router";
 
 export default function HomeScreen() {
 	return (
-		<View>
+		<View className="p-4">
 			<Stack.Screen name="home" />
 			<NewsGeneralList />
 		</View>

@@ -1,5 +1,6 @@
-import { Text, View, FlatList, ActivityIndicator } from "react-native";
+import { View, FlatList, ActivityIndicator, Text } from "react-native";
 import { useGetTopNewsQuery } from "../api/api-slice";
+import Article from "../../components/article/article";
 
 const NewsGeneralList = () => {
 	const { data, isLoading } = useGetTopNewsQuery();
@@ -11,14 +12,18 @@ const NewsGeneralList = () => {
 			/>
 		);
 	}
+	console.log(data);
 	return (
 		<View>
 			<FlatList
 				data={data.articles}
 				renderItem={({ item }) => (
-					<View>
-						<Text className="">{item.title}</Text>
-					</View>
+					<Article
+						title={item.title}
+						author={item.author}
+						publishedAt={item.publishedAt}
+						imgUrl={item.urlToImage}
+					/>
 				)}
 				keyExtractor={(item) => item.url}
 			/>
